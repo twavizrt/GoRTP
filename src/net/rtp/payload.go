@@ -67,6 +67,7 @@ package rtp
 const (
     Audio = 1
     Video = 2
+    Dynamic = 3
 )
 
 // PayloadFormat holds RTP payload formats.
@@ -136,5 +137,7 @@ func init() {
     // 35-71     Unassigned      ?
     // 72-76     Reserved for RTCP conflict avoidance
     // 77-95     Unassigned      ?
+    PayloadFormatMap[96] = &PayloadFormat{96, Dynamic, 0, 0,  "Dynamic"}
+    PayloadFormatMap[97] = &PayloadFormat{97, Dynamic, 0, 0,  "Dynamic"}
     // 96-127    dynamic         ? 
 }
